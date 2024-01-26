@@ -1,0 +1,46 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a3635dd5f4473cf448c3dc2c68e436a2, type: 3}
+  m_Name: Colliders and triggers description
+  m_EditorClassIdentifier: 
+  englishText: 'About the players capsule collider:
+
+    The player in VRChat actually
+    controls the movement of an invisible capsule, which for example stops them from
+    moving through walls or falling through the ground. This capsule collider has
+    a height of 1.65m and a diameter of 0.4m.
+
+
+
+    About detecting collisions:
+
+    There
+    are 3 types of collisions with the player which can be detected: Colliders, Triggers
+    and Particles. For each, there is a Enter, Stay and Exit fuction which you can
+    define and which is called by VRChat.
+
+    - Trigger functions run when the players
+    collision capsule overlaps with a collider where the Is Trigger flag is set to
+    True.
+
+    - Collider functions run when the players collision capsule overlaps
+    with a physics object where the collider where the Trigger flag is set to False.
+    As seen in the example, this neither works when the player walks into a stationary
+    object nor when the player is squeezed by a objets that moves without physics.
+
+    -
+    The same works for particle emitter when correctly set up. This is not demonstrated
+    here.
+
+'
+  japaneseText: 
+  tokiponaText: 

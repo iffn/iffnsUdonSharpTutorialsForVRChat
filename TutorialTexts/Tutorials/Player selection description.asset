@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a3635dd5f4473cf448c3dc2c68e436a2, type: 3}
+  m_Name: Player selection description
+  m_EditorClassIdentifier: 
+  englishText: "About player selection:\r\nSome of the following scripts show how
+    to get information from players. Therefore, a player selection is useful. This
+    script is one possible way of implementing such a system.\r\n\r\nOnPlayerJoined
+    and OnPlayerLeft:\r\nUpdating the player list every frame does not make sense.
+    Luckily, the functions OnPlayerJoined() and OnPlayerLeft() are called automatically
+    by VRChat each time a player joins or leaves. You can define these functions
+    for each script.\r\n\r\nAbout UI buttons calling functions:\r\nIt is sometimes
+    useful to run a function whenever a button is clicked. However, at the moment,
+    Udon and U# do not seem to support the direct change of these functions at runtime.
+    Therefore, the function needs to be linked in the editor. Adding a custom script
+    to each button meanwhile allows the implementation of dynamic functionalities.
+    \r"
+  japaneseText: 
+  tokiponaText: 

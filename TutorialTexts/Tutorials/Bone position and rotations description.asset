@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a3635dd5f4473cf448c3dc2c68e436a2, type: 3}
+  m_Name: Bone position and rotations description
+  m_EditorClassIdentifier: 
+  englishText: "About bones:\r\nPlayers in VRChat use a large variety of different
+    avatars. While most of these have a human skeleton, others do not. One consistency
+    however is the name of the bones. The position and rotation information of these
+    bones can be accessed. This can be used in different cases, such as clothing
+    and equipment carrying, positioning the player relative to a certain bone or
+    changing stuff based on the players hand movement.\r\n\r\nSome parts of VRChat
+    are also directly linked to certain bones:\r\n- Head: Controlled by the players
+    head movement. The player camera always follows this bone, both in VR and on
+    Desktop\r\n- LeftHand and RightHand: The hand trackers always steer this bone\r\n-
+    Hips: Full body tracking for hips?\r\n- LeftFoot and RightFoot: Full body tracking
+    for feet?\r\n\r\nNote that regardless of what the bones do, the players collision
+    is always controlled by a capsule collider which has a height of 1.65m and a
+    diameter of 0.4m.\r\n\r\nAbout this implementation:\r\nThis example shows the
+    bones of the currently selected player. The bone position and location are in
+    world coordinates by default, but are being transformed in this case to stand
+    on the pedestal looking forward.\r\nThe table code is not shown but just lists
+    the current local position and rotation of each bone.\r"
+  japaneseText: 
+  tokiponaText: 

@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a3635dd5f4473cf448c3dc2c68e436a2, type: 3}
+  m_Name: Linear grab controller description
+  m_EditorClassIdentifier: 
+  englishText: "Being able to grab and move something feels intuitive and immersive,
+    especially in VR. Since a nice implementation is quite difficult to do, it makes
+    sense to have a reusable template. This can be used for simple objects like drawers
+    as well as slider controllers.\r\n\r\nThe following script uses a VRCPickup,
+    which can be picked up. The local offset in the local Z direction is used to
+    calculate the new position. At the end of each frame, the pickup is moved back
+    to its original local location, hiding the actual position of the pickup in the
+    player\u2019s hand.\r\n\r\nDifferent settings allow the adjustment of offset,
+    symmetry and snap range. For other players as well as external controllers, the
+    output value can be used which, depending on the symmetry setting is either between
+    0\u20261 or -1\u20261.\r\n\nNote: This script uses the the smooth manual sync
+    script also shown here in order to optimize the network performance."
+  japaneseText: 
+  tokiponaText: 

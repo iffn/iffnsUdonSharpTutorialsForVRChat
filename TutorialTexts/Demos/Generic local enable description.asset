@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a3635dd5f4473cf448c3dc2c68e436a2, type: 3}
+  m_Name: Generic local enable description
+  m_EditorClassIdentifier: 
+  englishText: 'About local object activation:
+
+    It often makes sense to allow
+    the player to enable and disable certain parts of the world locally such as mirrors,
+    chairs and objects that eat a lot of performance. It therefore makes sense to
+    create a generic script that can be reused.
+
+
+    Implementation:
+
+    The implementation
+    has 2 arrays, to which objects can be assigned to in the editor. Interacting
+    with the attached object will enable the EnableObjects and disable the DisableObjects.
+    If the DisableWhenClickingAgain flag is set to true, the button acts like a toggle
+    for the EnableObjects. For this, the current state of the first EnableObject
+    is used.
+
+'
+  japaneseText: 
+  tokiponaText: 

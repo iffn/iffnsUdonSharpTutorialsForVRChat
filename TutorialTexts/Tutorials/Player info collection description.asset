@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a3635dd5f4473cf448c3dc2c68e436a2, type: 3}
+  m_Name: Player info collection description
+  m_EditorClassIdentifier: 
+  englishText: "About player information:\r\nOnce you have a reference to a player,
+    you can access a whole bunch of information. In this example, the currently selected
+    player from the script before is used.\r\nNote: The bone position and rotation
+    data is also available, but shown in a different script.\r\n\r\nLocal and synced
+    information:\r\nBe aware that only some information is synced. Items held, locomotion
+    settings and tracking data is only available on the local player. If you try
+    to access those on another player, the script will crash.\r"
+  japaneseText: 
+  tokiponaText: 

@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a3635dd5f4473cf448c3dc2c68e436a2, type: 3}
+  m_Name: UsefulSources description
+  m_EditorClassIdentifier: 
+  englishText: "<b>Unity and C#</b>\r\n- Specific problem:\r\n   Google to get to
+    <u>answers.unity.com</u>\r\n- General information:\r\n   Google to get to <u>docs.unity3d.com/ScriptReference</u>\r\n-
+    Youtube to find step by step tutorials\r\n\r\n<b>VRChat, Udon and U#</b>\r\n-
+    Official VRChat and Udon information:\r\n   <u>https://docs.vrchat.com</u>\r\n-
+    List of U# commands:\r\n   <u>hhttps://udonsharp.docs.vrchat.com/vrchat-api/</u>\r\n-
+    VRChat and UdonSharp Discord server\u200B\r\n- VRC Prefabs for complete implementations:\r\n  
+    <u>https://vrcprefabs.com/</u>\r"
+  japaneseText: 
+  tokiponaText: 

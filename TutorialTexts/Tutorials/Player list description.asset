@@ -1,0 +1,42 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a3635dd5f4473cf448c3dc2c68e436a2, type: 3}
+  m_Name: Player list description
+  m_EditorClassIdentifier: 
+  englishText: 'About GetPlayers()
+
+    Your script might need to know who is currently
+    in the Lobby. The function GetPlayers() can therefore help you. However, it needs
+    to be implemented correctly in order to work properly.
+
+
+    How it works:
+
+    The
+    GetPlayers() function writes the current players into an existing array. Therefore,
+    the array first needs to be created. The length of the array should at least
+    be as long as the current player count. This can be gotten with VRCPlayerApi.GetPlayerCount().
+
+
+    Note:
+
+    If
+    the array is longer than the current player count, the function GetPlayers()
+    will only change the first few values.
+
+    So, if the array has a size of 10
+    and there are only 3 players in the lobby, only the first 3 elements will be
+    changed. If 1 leaves and the array is updated, only the first 2 will be changed
+    and the 3rd will remain. This can potentially leave a reference to  a player
+    who has already left, which can cause errors.'
+  japaneseText: 
+  tokiponaText: 

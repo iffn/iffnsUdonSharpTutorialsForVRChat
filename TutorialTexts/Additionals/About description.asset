@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a3635dd5f4473cf448c3dc2c68e436a2, type: 3}
+  m_Name: About description
+  m_EditorClassIdentifier: 
+  englishText: "Welcome to my UdonSharp tutorial world\r\n\r\nThis world is designed
+    to show you what you can do with U# in VRChat and how to implement it.\r\n\r\nThere
+    are already a large amount of Tutorials and other resources available for Unity
+    and C# and you should use them. This world therefore mostly focuses specific
+    U# functions.\r\n\r\nI have originally learned UdonSharp while making this world.
+    Therefore, not everything might be perfect\r"
+  japaneseText: 
+  tokiponaText: 

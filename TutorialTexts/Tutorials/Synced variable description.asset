@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a3635dd5f4473cf448c3dc2c68e436a2, type: 3}
+  m_Name: Synced variable description
+  m_EditorClassIdentifier: 
+  englishText: "About continuous synchronization:\r\nIt makes sense to synchronize
+    some variables continuously. However, the data is usually only received a few
+    times per second. So far less often than the framerate. There are different ways
+    of handling the time in between.\r\n- The default behavior is using the UdonSyncMode
+    None. This only updates the variable to the latest known state. This means the
+    variable will jump once data is received.\r\n- The linear behavior increases
+    the value linearly. This makes the change more smoothly but still very predictable\r\n-
+    The smooth behaviour increases the value smoothly. This can however make the
+    value overshoot sometimes.\r\n\r\nAbout this implementation:\r\nThe owner makes
+    the sphere lerp between random points. The position of the sphere is then sent
+    out to the other players as different variables, each with their own sync behavior.
+    The difference between the behaviors is visible for everyone who isn't the owner.\r"
+  japaneseText: 
+  tokiponaText: 

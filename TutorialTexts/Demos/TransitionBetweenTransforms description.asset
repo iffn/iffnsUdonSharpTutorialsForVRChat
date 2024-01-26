@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a3635dd5f4473cf448c3dc2c68e436a2, type: 3}
+  m_Name: TransitionBetweenTransforms description
+  m_EditorClassIdentifier: 
+  englishText: "About transitions:\r\nSometimes, objects should transition between
+    different states when activated. This can be for a door or an elevator for example.
+    The following script therefore provides a generic implementation, where a Transform
+    will transition in terms of Position, Rotation and Scale between the original
+    location and the Target Transform. This transition is synced between players
+    and available to late joiners.\r\n\r\nImplementation:\r\nThis has been implemented
+    as a state machine. The synced state is a boolean called atStart, while the local
+    states also include the 2 transition states. Since U# currently does not support
+    Enums yet, the local states are implemented as integers.\r\n\r\nUse:\r\n3 things
+    are needed: An Activator object, a MovingTransform that should move and a Target
+    Transform that represents the second state. Attach the script to the Activator
+    and assign the Moving and Target Transforms. It ais also possible to adjust the
+    transition time as needed.\r"
+  japaneseText: 
+  tokiponaText: 

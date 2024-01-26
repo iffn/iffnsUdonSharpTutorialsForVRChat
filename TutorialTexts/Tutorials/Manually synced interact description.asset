@@ -1,0 +1,50 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a3635dd5f4473cf448c3dc2c68e436a2, type: 3}
+  m_Name: Manually synced interact description
+  m_EditorClassIdentifier: 
+  englishText: "Multiplayer elements in general:\r\nVRChat is mostly a multiplayer
+    game. Therefore, it often makes sense to synchronize information with other players.
+    This can be done in different ways.\r\n\r\nAbout Synced variables and ownership:\r\nOne
+    way of doing this is to use a synchronized variable. The idea is that a variable
+    has the same value for each player. This is done by defining an owner of an object,
+    who holds the correct value and shares it with the other players. If another
+    player wants to share the information, they need to first declare ownership.\r\n-
+    A synchronized variable can be identified with [UdonSynced]\r\n- Ownership can
+    be requested with Networking.SetOwner()\r\n- The local player is found with Networking.LocalPlayer\r\n\r\nAbout
+    Serialization and Deserialization:\r\nThe process of packing and sending the
+    data out from the owner is called Serialization. The process of receiving and
+    unpacking the data is called Deserialization. Unity and VRChat do these steps
+    themself when told, but there are some options.\r\n- If the Synchronization Method
+    is set to Continuous, the variable is sent out to other players multiple times
+    per second if possible.\r\n- If the Synchronization Method is set to Manual,
+    the variables can be sent out with RequestSerialization(). Also, the current
+    state is automatically requested from the owner once a new player joins.\r\n-
+    The Synchronization type can be set by adding the identifier [UdonBehaviourSyncMode(BehaviourSyncMode.Type)]
+    just before the main class declaration. While this can also be set in the inspector,
+    it usually makes sense from a workflow side to set it the program itself.\r\n-
+    Once data is received, the OnDeserialization() method is called, which can be
+    defined by you. Note that this does not run for the owner.\r\n\r\nAbout this
+    implementation:\r\nWe want to synchronize the toggle of the cube with the other
+    players. The current state is shared with the boolean ShouldBeActive. When interacting
+    with the trigger, the following steps happen:\r\n- The ownership is set to the
+    local player\r\n- The boolean is flipped\r\n- The new sphere activation state
+    is set\r\n- The information is sent out.\r\nWhen players receive the information,
+    the new sphere activation state is set.\r\n\r\nAlso good to know:\r\n- Just like
+    any other non-static variable in UdonSharp, the value is not shared between local
+    objects of the same class type. So, 2 objects can share the same script but will
+    each have their own synced variable.\r\n\r\n- Note that not all types of variables
+    can be synchronize directly. Only:\r\n  Normal and array: bool, char, byte, sbyte,
+    short, ushort, int, uint, long, ulong, float, double, Vector2, Vector3, Vector4,
+    Quaternion, Color and Color32\r\n  Not as arrays: string, VRCUrl\r"
+  japaneseText: 
+  tokiponaText: 

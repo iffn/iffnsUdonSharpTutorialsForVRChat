@@ -1,0 +1,58 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a3635dd5f4473cf448c3dc2c68e436a2, type: 3}
+  m_Name: Spam teleport description
+  m_EditorClassIdentifier: 
+  englishText: 'About Spam Teleporting:
+
+    Teleporting the player every frame can
+    be useful if you want to take control over the players movement without using
+    a station.
+
+
+    Smoothing out the lag:
+
+    While the standard teleport function
+    looks smooth locally, it will look like stuttering for other players since the
+    new position will only arrive every once in a while. Therefore, there is an option
+    to make the transition smooth by using lerpOnRemote as true.
+
+    Note that this
+    is using the same lerp function as is used to move the platform in this example.
+
+
+    About
+    SpawnOrientation:
+
+    This is about how the teleportation affects people using
+    roomscale VR.
+
+    When using AlignPlayerWithSpawnPoint, the player origin will
+    be used and the player can no longer walk around freely.
+
+    When using AlignRoomWithSpawnPoint,
+    the room center point will be used and the player can still move a bit by walking
+    in their room.
+
+
+    Limitations:
+
+    - As with the teleporter before, the VRChat
+    main menu is static relative to the World space and will not follow the player.
+
+    -
+    Due to the sync delay between players, there is always a delay between the player
+    and the platform for remote players. This has been addressed by using the NUMovement
+    by Nestorboy to teleport the player and the NUMovementPlatformSyncModForVRChat
+    by iffn to sync the player using stations.'
+  japaneseText: 
+  tokiponaText: 

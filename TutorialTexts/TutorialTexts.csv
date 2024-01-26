@@ -1,0 +1,255 @@
+Title,English,Japanese,Toki Pona
+"Code","Code
+","",""
+"Description","Description","",""
+"Generic code","Generic code implementations:
+Program once and keep reusing","",""
+"Show with output","Show with output","",""
+"Show without output","Show without output","",""
+"Step by step guide","Step by step guide to UdonSharp","",""
+"Tutorials start here","Turorials start here","",""
+"LocalInteract title","Local interact
+Using Interact()","",""
+"LocalInteract description","Basics about Interact():
+A common way to trigger a script in VRChat is to use the Interact() function. It is attached to a collider, which is highlighted and a text appears when the players hand or cursor is close enough to interact.
+
+Detailed mechanics:
+Each click by the player runs the script once. Clicking and holding only runs the script once at the beginning. The release is not detected as far as I'm aware.
+
+About the example:
+Clicking on the cube toggles the sphere on and off. Since the script does not forward information to other players, the change is purely local.","",""
+"Manually synced interact title","Manually synced interact
+Using [UdonSynced], SetOwner(), LocalPlayer, RequestSerialization(), OnDeserialization()","",""
+"Manually synced interact description","Multiplayer elements in general:
+VRChat is mostly a multiplayer game. Therefore, it often makes sense to synchronize information with other players. This can be done in different ways.
+
+About Synced variables and ownership:
+One way of doing this is to use a synchronized variable. The idea is that a variable has the same value for each player. This is done by defining an owner of an object, who holds the correct value and shares it with the other players. If another player wants to share the information, they need to first declare ownership.
+- A synchronized variable can be identified with [UdonSynced]
+- Ownership can be requested with Networking.SetOwner()
+- The local player is found with Networking.LocalPlayer
+
+About Serialization and Deserialization:
+The process of packing and sending the data out from the owner is called Serialization. The process of receiving and unpacking the data is called Deserialization. Unity and VRChat do these steps themself when told, but there are some options.
+- If the Synchronization Method is set to Continuous, the variable is sent out to other players multiple times per second if possible.
+- If the Synchronization Method is set to Manual, the variables can be sent out with RequestSerialization(). Also, the current state is automatically requested from the owner once a new player joins.
+- The Synchronization type can be set by adding the identifier [UdonBehaviourSyncMode(BehaviourSyncMode.Type)] just before the main class declaration. While this can also be set in the inspector, it usually makes sense from a workflow side to set it the program itself.
+- Once data is received, the OnDeserialization() method is called, which can be defined by you. Note that this does not run for the owner.
+
+About this implementation:
+We want to synchronize the toggle of the cube with the other players. The current state is shared with the boolean ShouldBeActive. When interacting with the trigger, the following steps happen:
+- The ownership is set to the local player
+- The boolean is flipped
+- The new sphere activation state is set
+- The information is sent out.
+When players receive the information, the new sphere activation state is set.
+
+Also good to know:
+- Just like any other non-static variable in UdonSharp, the value is not shared between local objects of the same class type. So, 2 objects can share the same script but will each have their own synced variable.
+
+- Note that not all types of variables can be synchronize directly. Only:
+  Normal and array: bool, char, byte, sbyte, short, ushort, int, uint, long, ulong, float, double, Vector2, Vector3, Vector4, Quaternion, Color and Color32
+  Not as arrays: string, VRCUrl","",""
+"Synced variable title","Synced Variable
+Using UdonSyncMode","",""
+"Synced variable description","About continuous synchronization:
+It makes sense to synchronize some variables continuously. However, the data is usually only received a few times per second. So far less often than the framerate. There are different ways of handling the time in between.
+- The default behavior is using the UdonSyncMode None. This only updates the variable to the latest known state. This means the variable will jump once data is received.
+- The linear behavior increases the value linearly. This makes the change more smoothly but still very predictable
+- The smooth behaviour increases the value smoothly. This can however make the value overshoot sometimes.
+
+About this implementation:
+The owner makes the sphere lerp between random points. The position of the sphere is then sent out to the other players as different variables, each with their own sync behavior. The difference between the behaviors is visible for everyone who isn't the owner.","",""
+"Synced event title","Synced Event
+Using SendCustomNetworkEvent()","",""
+"Synced event description","About Events:
+Another way of sharing information is to use Events. This essentially means that you can tell other people to run a public function on the object. This is useful for events that should happen for current players but do not matter for late joiners.
+
+About this implementation:
+In this example, the sphere jumps up a bit when clicking on the button. Since late joiners do not need to know if the sphere has jumped before, an Event is appropriate for this implementation.
+
+About implementing the SendCustomNetworkEvent function:
+The SendCustomNetworkEvent function needs the name of the function that should be called as a string. While it is possible to enter "YourFuncitonName" directly as a string, it will make your code less easy to maintain, since spelling errors and name changes can break your code without Visual Studio warning you. Therefore, the use of nameof() is highly recommended. 
+Also, note that:
+- The function being called needs to be public
+- The function being called is not allowed to receive any arguments. So nothing inside the () brackets.","",""
+"Teleporter title","Teleporter
+Using TeleportTo()","",""
+"Teleporter description","About teleportation:
+Teleporting a player can be useful in many instances, such as simple door or ladder implementations, by using a teleporter spell or to respawn a player. 
+
+What happens:
+When teleporting a player, their avatar gets assigned a new position and rotation. In this example, the target location is taken from a transform on top of the circle.
+If you don't want the player to rotate, just take the existing rotation of the player as an input and the value will stay the same. The same can also be done for the position, if you just want to rotate the player.
+
+Limitations:
+The standard Teleport behavior works well, if they are not called all the time. If you want to call it every frame to control the players movement, check out the next part.
+Also, note that the main menu of VRChat is located in World space and will not move with the player when teleporting.","",""
+"Spam teleport title","Spam teleport","",""
+"Spam teleport description","About Spam Teleporting:
+Teleporting the player every frame can be useful if you want to take control over the players movement without using a station.
+
+Smoothing out the lag:
+While the standard teleport function looks smooth locally, it will look like stuttering for other players since the new position will only arrive every once in a while. Therefore, there is an option to make the transition smooth by using lerpOnRemote as true.
+Note that this is using the same lerp function as is used to move the platform in this example.
+
+About SpawnOrientation:
+This is about how the teleportation affects people using roomscale VR.
+When using AlignPlayerWithSpawnPoint, the player origin will be used and the player can no longer walk around freely.
+When using AlignRoomWithSpawnPoint, the room center point will be used and the player can still move a bit by walking in their room.
+
+Limitations:
+- As with the teleporter before, the VRChat main menu is static relative to the World space and will not follow the player.
+- Due to the sync delay between players, there is always a delay between the player and the platform for remote players. This has been addressed by using the NUMovement by Nestorboy to teleport the player and the NUMovementPlatformSyncModForVRChat by iffn to sync the player using stations.","",""
+"Player list title","Player list
+Using VRCPlayerApi.GetPlayers()","",""
+"Player list description","About GetPlayers()
+Your script might need to know who is currently in the Lobby. The function GetPlayers() can therefore help you. However, it needs to be implemented correctly in order to work properly.
+
+How it works:
+The GetPlayers() function writes the current players into an existing array. Therefore, the array first needs to be created. The length of the array should at least be as long as the current player count. This can be gotten with VRCPlayerApi.GetPlayerCount().
+
+Note:
+If the array is longer than the current player count, the function GetPlayers() will only change the first few values.
+So, if the array has a size of 10 and there are only 3 players in the lobby, only the first 3 elements will be changed. If 1 leaves and the array is updated, only the first 2 will be changed and the 3rd will remain. This can potentially leave a reference to  a player who has already left, which can cause errors.","",""
+"Player selection title","Player selection","",""
+"Player selection description","About player selection:
+Some of the following scripts show how to get information from players. Therefore, a player selection is useful. This script is one possible way of implementing such a system.
+
+OnPlayerJoined and OnPlayerLeft:
+Updating the player list every frame does not make sense. Luckily, the functions OnPlayerJoined() and OnPlayerLeft() are called automatically by VRChat each time a player joins or leaves. You can define these functions for each script.
+
+About UI buttons calling functions:
+It is sometimes useful to run a function whenever a button is clicked. However, at the moment, Udon and U# do not seem to support the direct change of these functions at runtime. Therefore, the function needs to be linked in the editor. Adding a custom script to each button meanwhile allows the implementation of dynamic functionalities. ","",""
+"Interaction between scripts title","Interaction between scripts","",""
+"Interaction between scripts description","About other scripts:
+It is often useful to get the information from other scripts. As with normal C#, this can be done easily if you have an object of the relevant UdonSharpBehaviour class. Keep in mind that the function and variables you want to access need to be public.","",""
+"Player info collection title","Player info collection","",""
+"Player info collection description","About player information:
+Once you have a reference to a player, you can access a whole bunch of information. In this example, the currently selected player from the script before is used.
+Note: The bone position and rotation data is also available, but shown in a different script.
+
+Local and synced information:
+Be aware that only some information is synced. Items held, locomotion settings and tracking data is only available on the local player. If you try to access those on another player, the script will crash.","",""
+"Player settings title","Player settings","",""
+"Player settings description","About player settings:
+Some of the settings of the player can also be changed. This script shows what changes can be done to the local player. Keep in mind that there are also settings that can be locally changed for other players, such as Tags and Audio levels.","",""
+"Bone position and rotations title","Bone position and rotations","",""
+"Bone position and rotations description","About bones:
+Players in VRChat use a large variety of different avatars. While most of these have a human skeleton, others do not. One consistency however is the name of the bones. The position and rotation information of these bones can be accessed. This can be used in different cases, such as clothing and equipment carrying, positioning the player relative to a certain bone or changing stuff based on the players hand movement.
+
+Some parts of VRChat are also directly linked to certain bones:
+- Head: Controlled by the players head movement. The player camera always follows this bone, both in VR and on Desktop
+- LeftHand and RightHand: The hand trackers always steer this bone
+- Hips: Full body tracking for hips?
+- LeftFoot and RightFoot: Full body tracking for feet?
+
+Note that regardless of what the bones do, the players collision is always controlled by a capsule collider which has a height of 1.65m and a diameter of 0.4m.
+
+About this implementation:
+This example shows the bones of the currently selected player. The bone position and location are in world coordinates by default, but are being transformed in this case to stand on the pedestal looking forward.
+The table code is not shown but just lists the current local position and rotation of each bone.","",""
+"Colliders and triggers title","Colliders and triggers","",""
+"Colliders and triggers description","About the players capsule collider:
+The player in VRChat actually controls the movement of an invisible capsule, which for example stops them from moving through walls or falling through the ground. This capsule collider has a height of 1.65m and a diameter of 0.4m.
+
+
+About detecting collisions:
+There are 3 types of collisions with the player which can be detected: Colliders, Triggers and Particles. For each, there is a Enter, Stay and Exit fuction which you can define and which is called by VRChat.
+- Trigger functions run when the players collision capsule overlaps with a collider where the Is Trigger flag is set to True.
+- Collider functions run when the players collision capsule overlaps with a physics object where the collider where the Trigger flag is set to False. As seen in the example, this neither works when the player walks into a stationary object nor when the player is squeezed by a objets that moves without physics.
+- The same works for particle emitter when correctly set up. This is not demonstrated here.
+","",""
+"Player inputs title","Player inputs","",""
+"Player inputs description","About inputs:
+When the player just moves around normally, the inputs of the player are usually not needed directly in order to create functionality in your world. However, in some cases, such as when controlling a vehicle, the inputs of the player is needed in order to create custom functionality.
+
+Inplementation:
+There are 2 ways of reading input data in VRChat: Either by using the GetAxis commands in code or by listening to the input events.
+
+Due to the different controllers available, it is sometimes nessesarry to check what controllers are connected in order to create custom input systems.
+
+The following examples list the different inptus available and what their current values are.","",""
+"VRC Station title","VRC Station","",""
+"VRC Station description","Stations in VRChat:
+Stations are essentially seats. They can be used both as static seats inside your house for example or vehicle seats which tie the player to a moving object.
+
+Implementation
+Stations can be implemented in VRChat without a special script by simply adding the VRCStation component to an object and assigning the Ender and Exit locations. However, once you have attached your own script that calls the OnStationEntered() and OnStationExited() functions, you need to also add the Interact() function to make it work.
+
+Issues with current stations:
+When testing the default stations in VRChat, some problems will become apparent.
+- When a player sits on a station, the height reference used is down at the feet. Since people use many different avatar sizes, the default behavior means that larger avatars will seem to float while smaller avatars will be buried inside the chair. This can be adjusted by manually moving the station so that the hip position or head position is at a desired height. AAChair by Kamishiro Industry is an example of a working implementation.
+- Stations usually apply the sitting animation to the avatars. This does not apply to people who use full body tracking however. Since these players often use playspace movers, it makes sense to add a toggle to the colliders and stations of seats, so that people can disable them.","",""
+"VRC Pickup title","VRC Pickup","",""
+"VRC Pickup description","A VRC Pickup is a predefined component that allows players to pick up items. There are various variables and functions which can be accessed using Udon Sharp. For the functions to work correctly, the script needs to be attached to the same object as the VRC Pickup component.
+
+To sync the pickup, you can directly use the VRC Object Sync component. Alternatively, you can try to write your own sync behavior. Note that it is not possible to have a manual sync component on the same object as the VRC Object Sync.
+","",""
+"Recursion title","Recursion","",""
+"Recursion description","Recursive functions are functions that call themselfes. Unlike C#, variables in recursive functions will have the same value by default. In order for each iteration to have their own values, the keyword [RecursiveMethod] needs to be added.
+
+This example shows a Hierarchy output. Without the [RecursiveMethod] keyword, the variable returnString would not have a unique value when calling GetHierarchyOutput() inside of GetHierarchyOutput().","",""
+"Generic local enable title","Generic local enable disable button
+Ability to toggle multiple objects
+
+Demo has a mirror!","",""
+"Generic local enable description","About local object activation:
+It often makes sense to allow the player to enable and disable certain parts of the world locally such as mirrors, chairs and objects that eat a lot of performance. It therefore makes sense to create a generic script that can be reused.
+
+Implementation:
+The implementation has 2 arrays, to which objects can be assigned to in the editor. Interacting with the attached object will enable the EnableObjects and disable the DisableObjects. If the DisableWhenClickingAgain flag is set to true, the button acts like a toggle for the EnableObjects. For this, the current state of the first EnableObject is used.
+","",""
+"Proximity enabler title","Proximity enabler","",""
+"Proximity enabler description","Sometimes it is useful to only enable stuff when the player is standing close to it. This can be used for interesting effects or performance improvemements.
+
+This is used multiple times in this world to pause scripts in order to improve the performance. 
+
+Note:
+- Test or avoid disabling synced objects. Variable or ownership syncing might cause issues.
+- When linking the element to be disabled to itself, the script would disable itself. This also happens with scripts, since since Unity assumes that there is only 1 component type per object. Therefore, an error check to stop this from happening has been added.","",""
+"LogDisplay title","LogDisplay","",""
+"LogDisplay description","Being able to see the current state of a script is very useful during development. But the creation of string output strings can take up a lot of resources. It also does not make sense to fill up already complex programs with debug code. Therefore, a reusable and optimized solution would be very useful. 
+
+Currently, the stable version of UdonSharp does not support a lot of elements needed to write generic code such as class inheritance, interfaces, or static types. Therefore, alternative ways need to be found.
+
+The solution is therefore to have one common debug state behavior, which can be implemented by both the behaviors under development and the preferred output method. Since it does not make sense to collect the state every frame or when the player is far away, the common debug behavior is able to indicate, when the output information should be collected. Since this check is a lot quicker than generating the output, a performance improvement is achieved.","",""
+"TransitionBetweenTransforms title","TransitionBetweenTransforms","",""
+"TransitionBetweenTransforms description","About transitions:
+Sometimes, objects should transition between different states when activated. This can be for a door or an elevator for example. The following script therefore provides a generic implementation, where a Transform will transition in terms of Position, Rotation and Scale between the original location and the Target Transform. This transition is synced between players and available to late joiners.
+
+Implementation:
+This has been implemented as a state machine. The synced state is a boolean called atStart, while the local states also include the 2 transition states. Since U# currently does not support Enums yet, the local states are implemented as integers.
+
+Use:
+3 things are needed: An Activator object, a MovingTransform that should move and a Target Transform that represents the second state. Attach the script to the Activator and assign the Moving and Target Transforms. It ais also possible to adjust the transition time as needed.","",""
+"SmoothManualSync title","Smooth manual sync","",""
+"SmoothManualSync description","Continuously synced values have a built-in function to make the transition between the deserializations smooth. However, continuously syncing values that only sometimes change is quite wasteful. What is needed in those cases is a way to only sync values when they change.
+
+
+A great way of doing this is to use a separate Sync controller for variables. This can be attached to a Gameobject and can be integrated in scripts like a normal UdonSynced variable.
+
+
+In this example, a single floating-point number which represents the state of the slider is synced. This data is only sent out to other players when the value is changed.
+
+
+The result is that with a small cost in local performance, the network use is significantly reduced, when you have a lot of objects that rarely need to be synced.
+
+
+Note: I still recommend using the continuous sync method for values that are always synced, since they do seem to use less network resources than spamming RequestSerialization().","",""
+"Linear grab controller title","Linear grab controller","",""
+"Linear grab controller description","Being able to grab and move something feels intuitive and immersive, especially in VR. Since a nice implementation is quite difficult to do, it makes sense to have a reusable template. This can be used for simple objects like drawers as well as slider controllers.
+
+The following script uses a VRCPickup, which can be picked up. The local offset in the local Z direction is used to calculate the new position. At the end of each frame, the pickup is moved back to its original local location, hiding the actual position of the pickup in the player’s hand.
+
+Different settings allow the adjustment of offset, symmetry and snap range. For other players as well as external controllers, the output value can be used which, depending on the symmetry setting is either between 0…1 or -1…1.
+
+Note: This script uses the the smooth manual sync script also shown here in order to optimize the network performance.","",""
+"Rotation grab controller title","Rotation grab controller","",""
+"Rotation grab controller description","Being able to grab and move something feels intuitive and immersive, especially in VR. Since a nice implementation is quite difficult to do, it makes sense to have a reusable template. This can be used for simple objects like doors as well as lever controllers.
+
+The following script uses a VRCPickup, which can be picked up. Using the local XY position, the angle is calculated. Therefore, the controller need to be rotated in such a way, that the X+ represents 0° and the Y° represents 90°. At the end of each frame, the pickup is moved back to its original local location, hiding the actual position of the pickup in the player’s hand.
+
+Different settings allow the adjustment of offset, symmetry and snap range. For other players as well as external controllers, the output value can be used which, depending on the symmetry setting is either between 0…1 or -1…1.
+
+Note: This script uses the the smooth manual sync script also shown here in order to optimize the network performance.","",""

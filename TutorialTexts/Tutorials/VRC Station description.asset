@@ -1,0 +1,50 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a3635dd5f4473cf448c3dc2c68e436a2, type: 3}
+  m_Name: VRC Station description
+  m_EditorClassIdentifier: 
+  englishText: 'Stations in VRChat:
+
+    Stations are essentially seats. They can
+    be used both as static seats inside your house for example or vehicle seats which
+    tie the player to a moving object.
+
+
+    Implementation
+
+    Stations can be
+    implemented in VRChat without a special script by simply adding the VRCStation
+    component to an object and assigning the Ender and Exit locations. However, once
+    you have attached your own script that calls the OnStationEntered() and OnStationExited()
+    functions, you need to also add the Interact() function to make it work.
+
+
+    Issues
+    with current stations:
+
+    When testing the default stations in VRChat, some
+    problems will become apparent.
+
+    - When a player sits on a station, the height
+    reference used is down at the feet. Since people use many different avatar sizes,
+    the default behavior means that larger avatars will seem to float while smaller
+    avatars will be buried inside the chair. This can be adjusted by manually moving
+    the station so that the hip position or head position is at a desired height.
+    AAChair by Kamishiro Industry is an example of a working implementation.
+
+    -
+    Stations usually apply the sitting animation to the avatars. This does not apply
+    to people who use full body tracking however. Since these players often use playspace
+    movers, it makes sense to add a toggle to the colliders and stations of seats,
+    so that people can disable them.'
+  japaneseText: 
+  tokiponaText: 

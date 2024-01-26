@@ -1,0 +1,45 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a3635dd5f4473cf448c3dc2c68e436a2, type: 3}
+  m_Name: SmoothManualSync description
+  m_EditorClassIdentifier: 
+  englishText: 'Continuously synced values have a built-in function to make the transition
+    between the deserializations smooth. However, continuously syncing values that
+    only sometimes change is quite wasteful. What is needed in those cases is a way
+    to only sync values when they change.
+
+
+
+    A great way of doing this is to
+    use a separate Sync controller for variables. This can be attached to a Gameobject
+    and can be integrated in scripts like a normal UdonSynced variable.
+
+
+
+    In
+    this example, a single floating-point number which represents the state of the
+    slider is synced. This data is only sent out to other players when the value
+    is changed.
+
+
+
+    The result is that with a small cost in local performance,
+    the network use is significantly reduced, when you have a lot of objects that
+    rarely need to be synced.
+
+
+
+    Note: I still recommend using the continuous
+    sync method for values that are always synced, since they do seem to use less
+    network resources than spamming RequestSerialization().'
+  japaneseText: 
+  tokiponaText: 

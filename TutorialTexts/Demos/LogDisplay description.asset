@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a3635dd5f4473cf448c3dc2c68e436a2, type: 3}
+  m_Name: LogDisplay description
+  m_EditorClassIdentifier: 
+  englishText: "Being able to see the current state of a script is very useful during
+    development. But the creation of string output strings can take up a lot of resources.
+    It also does not make sense to fill up already complex programs with debug code.
+    Therefore, a reusable and optimized solution would be very useful. \r\n\r\nCurrently,
+    the stable version of UdonSharp does not support a lot of elements needed to
+    write generic code such as class inheritance, interfaces, or static types. Therefore,
+    alternative ways need to be found.\r\n\r\nThe solution is therefore to have one
+    common debug state behavior, which can be implemented by both the behaviors under
+    development and the preferred output method. Since it does not make sense to
+    collect the state every frame or when the player is far away, the common debug
+    behavior is able to indicate, when the output information should be collected.
+    Since this check is a lot quicker than generating the output, a performance improvement
+    is achieved.\r"
+  japaneseText: 
+  tokiponaText: 

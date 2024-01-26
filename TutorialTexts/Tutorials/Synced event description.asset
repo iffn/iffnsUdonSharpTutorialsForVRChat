@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a3635dd5f4473cf448c3dc2c68e436a2, type: 3}
+  m_Name: Synced event description
+  m_EditorClassIdentifier: 
+  englishText: "About Events:\r\nAnother way of sharing information is to use Events.
+    This essentially means that you can tell other people to run a public function
+    on the object. This is useful for events that should happen for current players
+    but do not matter for late joiners.\r\n\r\nAbout this implementation:\r\nIn this
+    example, the sphere jumps up a bit when clicking on the button. Since late joiners
+    do not need to know if the sphere has jumped before, an Event is appropriate
+    for this implementation.\r\n\r\nAbout implementing the SendCustomNetworkEvent
+    function:\r\nThe SendCustomNetworkEvent function needs the name of the function
+    that should be called as a string. While it is possible to enter \"YourFuncitonName\"
+    directly as a string, it will make your code less easy to maintain, since spelling
+    errors and name changes can break your code without Visual Studio warning you.
+    Therefore, the use of nameof() is highly recommended. \r\nAlso, note that:\r\n-
+    The function being called needs to be public\r\n- The function being called is
+    not allowed to receive any arguments. So nothing inside the () brackets.\r"
+  japaneseText: 
+  tokiponaText: 

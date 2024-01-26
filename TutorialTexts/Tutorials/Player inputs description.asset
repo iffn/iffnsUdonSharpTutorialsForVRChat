@@ -1,0 +1,38 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a3635dd5f4473cf448c3dc2c68e436a2, type: 3}
+  m_Name: Player inputs description
+  m_EditorClassIdentifier: 
+  englishText: 'About inputs:
+
+    When the player just moves around normally, the
+    inputs of the player are usually not needed directly in order to create functionality
+    in your world. However, in some cases, such as when controlling a vehicle, the
+    inputs of the player is needed in order to create custom functionality.
+
+
+    Inplementation:
+
+    There
+    are 2 ways of reading input data in VRChat: Either by using the GetAxis commands
+    in code or by listening to the input events.
+
+
+    Due to the different controllers
+    available, it is sometimes nessesarry to check what controllers are connected
+    in order to create custom input systems.
+
+
+    The following examples list the
+    different inptus available and what their current values are.'
+  japaneseText: 
+  tokiponaText: 

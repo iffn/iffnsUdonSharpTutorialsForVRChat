@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a3635dd5f4473cf448c3dc2c68e436a2, type: 3}
+  m_Name: Teleporter description
+  m_EditorClassIdentifier: 
+  englishText: "About teleportation:\r\nTeleporting a player can be useful in many
+    instances, such as simple door or ladder implementations, by using a teleporter
+    spell or to respawn a player. \r\n\r\nWhat happens:\r\nWhen teleporting a player,
+    their avatar gets assigned a new position and rotation. In this example, the
+    target location is taken from a transform on top of the circle.\r\nIf you don't
+    want the player to rotate, just take the existing rotation of the player as an
+    input and the value will stay the same. The same can also be done for the position,
+    if you just want to rotate the player.\r\n\r\nLimitations:\r\nThe standard Teleport
+    behavior works well, if they are not called all the time. If you want to call
+    it every frame to control the players movement, check out the next part.\r\nAlso,
+    note that the main menu of VRChat is located in World space and will not move
+    with the player when teleporting.\r"
+  japaneseText: 
+  tokiponaText: 
