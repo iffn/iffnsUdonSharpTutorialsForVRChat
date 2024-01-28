@@ -928,7 +928,7 @@ MonoBehaviour:
   DisableObjects:
   - {fileID: 3972113754315048717}
   - {fileID: 103088288366852805}
-  - {fileID: 7761582127094206305}
+  - {fileID: 0}
   DisableWhenClickingAgain: 0
 --- !u!114 &4391871500549918348
 MonoBehaviour:
@@ -2627,6 +2627,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8031422425080549610, guid: 91b1e8a60b08e8f44a3cadc716492911,
         type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8031422425080549610, guid: 91b1e8a60b08e8f44a3cadc716492911,
+        type: 3}
       propertyPath: m_AnchoredPosition.x
       value: 0
       objectReference: {fileID: 0}
@@ -2634,6 +2639,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8031422425610247594, guid: 91b1e8a60b08e8f44a3cadc716492911,
+        type: 3}
+      propertyPath: m_PresetInfoIsWorld
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8031422425750055564, guid: 91b1e8a60b08e8f44a3cadc716492911,
         type: 3}
@@ -2643,6 +2653,11 @@ PrefabInstance:
     - target: {fileID: 8031422425750055564, guid: 91b1e8a60b08e8f44a3cadc716492911,
         type: 3}
       propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8031422425750055564, guid: 91b1e8a60b08e8f44a3cadc716492911,
+        type: 3}
+      propertyPath: m_SizeDelta.x
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8031422425750055564, guid: 91b1e8a60b08e8f44a3cadc716492911,
@@ -2669,12 +2684,6 @@ Transform:
 --- !u!1 &5329553588321745851 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8031422425080549611, guid: 91b1e8a60b08e8f44a3cadc716492911,
-    type: 3}
-  m_PrefabInstance: {fileID: 2775124351242677072}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &7761582127094206305 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5563516976114148401, guid: 91b1e8a60b08e8f44a3cadc716492911,
     type: 3}
   m_PrefabInstance: {fileID: 2775124351242677072}
   m_PrefabAsset: {fileID: 0}
