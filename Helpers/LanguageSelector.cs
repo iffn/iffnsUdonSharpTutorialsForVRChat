@@ -12,19 +12,20 @@ public class LanguageSelector : UdonSharpBehaviour
 
     public void SelectEnglish()
     {
+
         foreach(GameObject element in englishTexts)
         {
-            gameObject.SetActive(true);
+            element.SetActive(true);
         }
 
         foreach (GameObject element in japaneseTexts)
         {
-            gameObject.SetActive(false);
+            element.SetActive(false);
         }
 
         foreach (GameObject element in tokiponaTexts)
         {
-            gameObject.SetActive(false);
+            element.SetActive(false);
         }
     }
 
@@ -32,17 +33,17 @@ public class LanguageSelector : UdonSharpBehaviour
     {
         foreach (GameObject element in englishTexts)
         {
-            gameObject.SetActive(false);
+            element.SetActive(false);
         }
 
         foreach (GameObject element in japaneseTexts)
         {
-            gameObject.SetActive(true);
+            element.SetActive(true);
         }
 
         foreach (GameObject element in tokiponaTexts)
         {
-            gameObject.SetActive(false);
+            element.SetActive(false);
         }
     }
 
@@ -50,17 +51,17 @@ public class LanguageSelector : UdonSharpBehaviour
     {
         foreach (GameObject element in englishTexts)
         {
-            gameObject.SetActive(false);
+            element.SetActive(false);
         }
 
         foreach (GameObject element in japaneseTexts)
         {
-            gameObject.SetActive(false);
+            element.SetActive(false);
         }
 
         foreach (GameObject element in tokiponaTexts)
         {
-            gameObject.SetActive(true);
+            element.SetActive(true);
         }
     }
 }
