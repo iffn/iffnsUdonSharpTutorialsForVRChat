@@ -132,7 +132,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   serializationData:
-    SerializedFormat: 0
+    SerializedFormat: 2
     SerializedBytes: 
     ReferencedUnityObjects: []
     SerializedBytesString: 
@@ -181,7 +181,6 @@ GameObject:
   m_Component:
   - component: {fileID: 7951138476891406901}
   - component: {fileID: 161652958449753044}
-  - component: {fileID: 8308557174471574732}
   - component: {fileID: 3809139957849137832}
   m_Layer: 0
   m_Name: DisplayText
@@ -251,14 +250,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!222 &8308557174471574732
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5963176554665467308}
-  m_CullTransparentMesh: 0
 --- !u!114 &3809139957849137832
 MonoBehaviour:
   m_ObjectHideFlags: 0

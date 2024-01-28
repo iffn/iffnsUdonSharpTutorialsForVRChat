@@ -396,7 +396,6 @@ GameObject:
   - component: {fileID: 5982933328569978480}
   - component: {fileID: 2727903106462570281}
   - component: {fileID: 6730673400476424264}
-  - component: {fileID: 6938218938022912746}
   - component: {fileID: 4248151975274953656}
   m_Layer: 0
   m_Name: Text English
@@ -479,14 +478,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!222 &6938218938022912746
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3325047290046801655}
-  m_CullTransparentMesh: 0
 --- !u!114 &4248151975274953656
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1002,7 +993,6 @@ GameObject:
   - component: {fileID: 8498193826957902493}
   - component: {fileID: 401569447484086057}
   - component: {fileID: 4946413395440474765}
-  - component: {fileID: 3144608855973654612}
   - component: {fileID: 1483175943221546564}
   m_Layer: 0
   m_Name: Text English
@@ -1085,14 +1075,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!222 &3144608855973654612
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5617450286156537417}
-  m_CullTransparentMesh: 0
 --- !u!114 &1483175943221546564
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1281,7 +1263,6 @@ GameObject:
   - component: {fileID: 3098416800313063996}
   - component: {fileID: 5536279610413715285}
   - component: {fileID: 1767062177494501259}
-  - component: {fileID: 9074948485615675081}
   - component: {fileID: 4524237624436469931}
   m_Layer: 0
   m_Name: Text Tokipona
@@ -1364,14 +1345,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!222 &9074948485615675081
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6157591517339642816}
-  m_CullTransparentMesh: 0
 --- !u!114 &4524237624436469931
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1477,7 +1450,6 @@ GameObject:
   - component: {fileID: 1139978395333819763}
   - component: {fileID: 6134040157335227999}
   - component: {fileID: 7609061571890101499}
-  - component: {fileID: 9041605834484400163}
   - component: {fileID: 3761767741297097677}
   m_Layer: 0
   m_Name: Text Japanese
@@ -1560,14 +1532,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!222 &9041605834484400163
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6559317260084866689}
-  m_CullTransparentMesh: 0
 --- !u!114 &3761767741297097677
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1779,7 +1743,6 @@ GameObject:
   - component: {fileID: 5787637676541247350}
   - component: {fileID: 396579343735519947}
   - component: {fileID: 1991792498169275821}
-  - component: {fileID: 84310741469713584}
   - component: {fileID: 987800164149908626}
   m_Layer: 0
   m_Name: Text Japanese
@@ -1862,14 +1825,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!222 &84310741469713584
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7206080487780952200}
-  m_CullTransparentMesh: 0
 --- !u!114 &987800164149908626
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2070,7 +2025,6 @@ GameObject:
   - component: {fileID: 7207838542454362811}
   - component: {fileID: 8790159887631622225}
   - component: {fileID: 8059592316356944780}
-  - component: {fileID: 4982031206716486057}
   - component: {fileID: 3793968570634798923}
   m_Layer: 0
   m_Name: Text Tokipona
@@ -2153,14 +2107,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!222 &4982031206716486057
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8000129831005416103}
-  m_CullTransparentMesh: 0
 --- !u!114 &3793968570634798923
 MonoBehaviour:
   m_ObjectHideFlags: 0
